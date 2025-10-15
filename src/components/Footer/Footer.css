@@ -1,0 +1,24 @@
+.footer {
+  width: 100vw; 
+  background-color: #e0f0ff;
+  padding: 20px 0;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0 0 10px 0;
+  color: rgb(14,28,95);
+  font-weight: bold;
+}
+
+.footer .socials a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: rgb(24,71,130);
+  font-weight: 500;
+}
+
+.footer .socials a:hover {
+  color: rgb(61,129,190);
+}
