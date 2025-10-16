@@ -4,18 +4,17 @@ export default function Item({ prod }) {
   return (
 
 
-    <div class="col-lg-3 col-md-6 col-sm-12">
-      <div class="card">
-        <div class="image-container">
+    <div className="col-lg-3 col-md-6 col-sm-12">
+      <div className="card">
+        <div className="image-container">
           <a href="#">
             <img src={prod.img} alt={prod.title} className="product-image" />
           </a>
         </div>
-        <div class="product-detail-container">
-          <h5 class="dress-name">{prod.title}</h5>
-          <div class="d-flex justify-content-between align-items-center mt-2">
-            <span class="new-price">${prod.price}</span>
-            <span class="buy">Agregar +</span>
+        <div className="product-detail-container">
+          <h5 className="dress-name">{prod.title}</h5>
+          <div className="d-flex justify-content-between align-items-center mt-2">
+            <span className="new-price">${prod.price}</span>
           </div>
         </div>
       </div>

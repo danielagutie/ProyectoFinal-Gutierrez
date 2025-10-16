@@ -1,17 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import "./ItemListContainer.css";
-
-import { products } from "../../data/products.js";
+import getProducts from "../../data/API.js";
 import Item from "../Item.jsx";
 
 export default function ItemListContainer(props) {
-  let todos = []
-  //  console.log({products});
+  const [products, setProducts] = useState([]);
+  useEffect(() => { getProducts().then((data) => setProducts(data)) },
+    [])
 
   return (
-
-    <div class="container mt-4">
-      <div class="row g-3">
+    <div className="container mt-4">
+      <div className="row g-3">
         {products.map((prod) => (
           <Item key={prod.idProd} prod={prod} />
         ))}
