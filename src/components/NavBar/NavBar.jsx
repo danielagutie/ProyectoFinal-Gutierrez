@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./NavBar.css";
 import CartWidget from "../CartWidget/CartWidget";
+import { Link } from "react-router";
 
 export default function NavBar() {
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
@@ -10,9 +11,9 @@ export default function NavBar() {
       <div className="container-fluid full-width-container">
         {/* Logo */}
         <div className="col-auto">
-          <a className="navbar-brand text-black" href="#">
+          <Link to="/">
             <img src="/images/logo-text.png" alt="Pampa Logo" className="logo-img" />
-          </a>
+          </Link>
         </div>
 
         {/* Menú */}

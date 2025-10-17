@@ -1,23 +1,24 @@
 import React from "react";
+import { Link } from "react-router";
 
 export default function Item({ prod }) {
   return (
-
-
     <div className="col-lg-3 col-md-6 col-sm-12">
-      <div className="card">
-        <div className="image-container">
-          <a href="#">
+
+      <Link to={`/detalle/${prod.idProd}`}>
+        <div className="card">
+          <div className="image-container">
             <img src={prod.img} alt={prod.title} className="product-image" />
-          </a>
-        </div>
-        <div className="product-detail-container">
-          <h5 className="dress-name">{prod.title}</h5>
-          <div className="d-flex justify-content-between align-items-center mt-2">
-            <span className="new-price">${prod.price}</span>
+          </div>
+          <div className="product-detail-container">
+            <h5 className="dress-name">{prod.title}</h5>
+            <div className="d-flex justify-content-between align-items-center mt-2">
+              <span className="new-price">${prod.price}</span>
+            </div>
           </div>
         </div>
-      </div>
+      </Link>
+
     </div>
 
     // <div className="col-lg-3 col-md-4 col-sm-6 mb-4">

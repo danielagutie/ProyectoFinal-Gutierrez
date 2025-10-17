@@ -5,6 +5,6 @@
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 35px; /* más pequeño en tablet/móvil */
+    height: 35px;
   }
 }

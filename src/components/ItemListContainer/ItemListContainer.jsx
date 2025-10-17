@@ -10,6 +10,7 @@ export default function ItemListContainer(props) {
 
   return (
     <div className="container mt-4">
+      <h2 className="mb-4">{props.titulo}</h2>
       <div className="row g-3">
         {products.map((prod) => (
           <Item key={prod.idProd} prod={prod} />
