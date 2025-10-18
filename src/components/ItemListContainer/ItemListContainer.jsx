@@ -1,12 +1,16 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router";
 // import "./ItemListContainer.css";
-import getProducts from "../../data/API.js";
+import { getProducts, getProductsByCategory } from "../../data/API.js";
 import Item from "../Item.jsx";
 
 export default function ItemListContainer(props) {
+  const { idCategory } = useParams();
+  getProductsByCategory(idCategory);
   const [products, setProducts] = useState([]);
-  useEffect(() => { getProducts().then((data) => setProducts(data)) },
-    [])
+  useEffect(() => {
+    getProducts().then((data) => setProducts(data))
+  }, [])
 
   return (
     <div className="container mt-4">
@@ -17,23 +21,5 @@ export default function ItemListContainer(props) {
         ))}
       </div>
     </div>
-    // <div className="container mt-4">
-    //   <div className="row g-1">
-    //     {products.map((prod) => (
-    //       <Item key={prod.idProd} prod={prod} />
-    //     ))}
-    //   </div>
-    // </div>
-
-    // <section id="best-sellers" className="bg-light py-5">
-    //   <div className="container">
-    //     <div className="row">
-    //       {products.map((prod) => (
-    //         <Item key={prod.idProd} product={prod} />
-    //       ))}
-    //     </div>
-    //   </div>
-    // </section>
-
   );
 }

@@ -46,7 +46,6 @@ export default function NavBar() {
                   <a className="nav-link" href="#">NOSOTROS</a>
                 </li>
 
-                {/* Dropdown de productos funcional en móvil */}
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -62,7 +61,7 @@ export default function NavBar() {
                     PRODUCTOS
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="productosDropdown">
-                    <li><a className="dropdown-item" href="#">Cerraduras</a></li>
+                    <li><Link to={`/category/Cerraduras`} className="dropdown-item">Cerraduras</Link></li>
                     <li><a className="dropdown-item" href="#">Candados</a></li>
                     <li><a className="dropdown-item" href="#">Accesorios</a></li>
                   </ul>
