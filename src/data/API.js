@@ -21,8 +21,7 @@ function getProductsByCategory(idCategory) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       const productsByCategory = products.filter((p) => p.categoria === idCategory);
-      console.log("hola");
-      productsByCategory ? resolve(productsByCategory) : reject(new Error("Categoria no encontrada"));
+      productsByCategory ? resolve(productsByCategory) : reject(new Error("Se produjo un error al filtrar por categoría"));
     }, 500);
   });
 }

@@ -61,9 +61,9 @@ export default function NavBar() {
                     PRODUCTOS
                   </a>
                   <ul className="dropdown-menu" aria-labelledby="productosDropdown">
+                    <li><Link to={`/category/Accesorios`} className="dropdown-item" >Accesorios</Link></li>
+                    <li><Link to={`/category/Candados`} className="dropdown-item">Candados</Link></li>
                     <li><Link to={`/category/Cerraduras`} className="dropdown-item">Cerraduras</Link></li>
-                    <li><a className="dropdown-item" href="#">Candados</a></li>
-                    <li><a className="dropdown-item" href="#">Accesorios</a></li>
                   </ul>
                 </li>
 
@@ -77,7 +77,7 @@ export default function NavBar() {
         </div>
 
         {/* Carrito */}
-        <CartWidget />
+        <Link to="cart"> <CartWidget /></Link>
       </div>
     </nav>
 

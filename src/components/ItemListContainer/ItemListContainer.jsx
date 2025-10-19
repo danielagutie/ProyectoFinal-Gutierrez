@@ -6,11 +6,26 @@ import Item from "../Item.jsx";
 
 export default function ItemListContainer(props) {
   const { idCategory } = useParams();
-  getProductsByCategory(idCategory);
   const [products, setProducts] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    getProducts().then((data) => setProducts(data))
-  }, [])
+    if (idCategory) {
+      getProductsByCategory(idCategory).then((data) => setProducts(data))
+        .catch((err) => setError(err.message))
+        .finally(() => setLoading(false))
+    } else {
+      getProducts().then((data) => setProducts(data))
+      setLoading(false)
+    }
+  }, [idCategory])
+
+  if (loading) return <p>Cargando...</p>;
+  if (error) return <p>{error}</p>;
+  if (!loading && products.length === 0)
+    return <p>No hay productos para la categoría seleccionada.</p>;
 
   return (
     <div className="container mt-4">

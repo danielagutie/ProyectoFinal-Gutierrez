@@ -1,13 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { getProductById } from "../../data/API.js";
+import CartContext from "../../context/cartContext";
 
 export default function ItemDetailContainer() {
     const { idProd } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const context = useContext(CartContext);
 
     useEffect(() => {
         setLoading(true);
@@ -34,7 +36,7 @@ export default function ItemDetailContainer() {
                     <span className="new-price">Precio: ${product.price}</span>
                 </div>
             </div>
-            <div><button>Agregar al carrito</button></div>
+            <div><button onClick={() => context.addToCart(product)}>Agregar al carrito</button></div>
         </div>
     );
 }
