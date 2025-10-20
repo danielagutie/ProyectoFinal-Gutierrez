@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 // import "./ItemListContainer.css";
-import { getProducts, getProductsByCategory } from "../../data/API.js";
+// import { getProductsByCategory } from "../../data/API.js";
+import { getProducts, getProductsByCategory } from "../../data/firebase.js";
 import Item from "../Item.jsx";
 
 export default function ItemListContainer(props) {
@@ -32,7 +33,7 @@ export default function ItemListContainer(props) {
       <h2 className="mb-4">{props.titulo}</h2>
       <div className="row g-3">
         {products.map((prod) => (
-          <Item key={prod.idProd} prod={prod} />
+          <Item key={prod.id} prod={prod} />
         ))}
       </div>
     </div>

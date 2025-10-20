@@ -5,7 +5,7 @@ export default function Item({ prod }) {
   return (
     <div className="col-lg-3 col-md-6 col-sm-12">
 
-      <Link to={`/detalle/${prod.idProd}`}>
+      <Link to={`/detalle/${prod.id}`}>
         <div className="card">
           <div className="image-container">
             <img src={prod.img} alt={prod.title} className="product-image" />

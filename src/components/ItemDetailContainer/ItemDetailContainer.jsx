@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
-import { getProductById } from "../../data/API.js";
+import { getProductById } from "../../data/firebase.js";
 import CartContext from "../../context/cartContext";
 
 export default function ItemDetailContainer() {
-    const { idProd } = useParams();
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -15,11 +15,11 @@ export default function ItemDetailContainer() {
         setLoading(true);
         setError(null);
 
-        getProductById(idProd)
+        getProductById(id)
             .then((data) => setProduct(data))
             .catch((err) => setError(err.message))
             .finally(() => setLoading(false));
-    }, [idProd]);
+    }, [id]);
 
     if (loading) return <p>Cargando...</p>;
     if (error) return <p>{error}</p>;

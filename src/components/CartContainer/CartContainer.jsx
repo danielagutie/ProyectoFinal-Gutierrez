@@ -1,20 +1,30 @@
 import { useContext } from "react"
 import CartContext from "../../context/cartContext"
+import { createOrder } from "../../data/firebase.js";
+
 
 export default function CartContainer() {
   const { cartItems, removeFromCart } = useContext(CartContext)
+
+  const orderData = {   
+    buyer: {name: "Juan Perez", email: "jp@gmail.com"},
+    items: cartItems,
+    priceTotal: cartItems.reduce((total, item) => total + item.price * item.quantity, 0),
+    date: new Date()
+  }
 
   return (
     <div>
       <h3>Carrito</h3>
       {
         cartItems.map(item =>
-          <div key={item.idProd}>
+          <div key={item.id}>
             <h4>{item.title}</h4>
             <p>Cantidad: {item.quantity}</p>
             <p>Precio unitario: ${item.price}</p>
             <p>Subtotal: ${item.price * item.quantity}</p>
-            <button onClick={() => removeFromCart(item.idProd)}>Quitar del carrito</button>
+            <button onClick={() => removeFromCart(item.id)}>Quitar del carrito</button>
+            <button onClick={() => createOrder(orderData)}>Finalizar compra</button>
           </div>)
       }
     </div>

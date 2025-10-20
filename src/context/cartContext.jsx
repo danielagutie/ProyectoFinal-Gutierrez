@@ -8,7 +8,7 @@ export function CartProvider(props) {
   function addToCart(newItem) {
     const newCartItems = structuredClone(cartItems);
 
-    const indexItem = newCartItems.findIndex(item => item.idProd == newItem.idProd);
+    const indexItem = newCartItems.findIndex(item => item.id == newItem.id);
 
     if (indexItem !== -1) {
       newCartItems[indexItem].quantity++;
@@ -21,13 +21,13 @@ export function CartProvider(props) {
   }
 
   function removeFromCart(itemId) {
-    const newCartItems = cartItems.filter((item) => item.idProd !== itemId)
+    const newCartItems = cartItems.filter((item) => item.id !== itemId)
     setCartItems(newCartItems)
   }
 
   function removeUnitFromCart(itemId) {
     const newCartItems = structuredClone(cartItems);
-    const indexItem = newCartItems.findIndex((item) => item.idProd === itemId)
+    const indexItem = newCartItems.findIndex((item) => item.id === itemId)
 
     if (newCartItems[indexItem].quantity > 1) {
       newCartItems[indexItem].quantity--

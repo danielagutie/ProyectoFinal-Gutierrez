@@ -8,10 +8,10 @@ function getProducts() {
   });
 }
 
-function getProductById(idProd) {
+function getProductById(id) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const product = products.find((p) => p.idProd == idProd);
+      const product = products.find((p) => p.id == id);
       product ? resolve(product) : reject(new Error("Producto no encontrado"));
     }, 500);
   });
