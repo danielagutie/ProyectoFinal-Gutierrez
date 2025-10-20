@@ -51,10 +51,10 @@ export function CartProvider(props) {
 
   function ClearCart() {
     setCartItems([])
-  } 
+  }
 
   return (
-    <CartContext.Provider value={{ cartItems, countItems, addToCart, removeFromCart, removeUnitFromCart }}>
+    <CartContext.Provider value={{ cartItems, countItems, addToCart, removeFromCart, removeUnitFromCart, ClearCart }}>
       {props.children}
     </CartContext.Provider>
   );

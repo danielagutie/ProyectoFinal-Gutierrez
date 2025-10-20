@@ -25,6 +25,10 @@ export async function getProducts() {
   return dataProducts
 }
 
+//-----------------------------------------------------------------------------
+//Funciones para productos
+//-----------------------------------------------------------------------------
+
 export async function getProductById(id) {
   const docRef = doc(db, 'products', id)
   const docSnapshot = await getDoc(docRef)
@@ -37,7 +41,7 @@ export async function getProductById(id) {
 export async function getProductsByCategory(idCategory) {
   const productsRef = collection(db, 'products')
 
-  const q = query(productsRef, where('categoria', '==', idCategory)) 
+  const q = query(productsRef, where('categoria', '==', idCategory))
 
   const productsSnapshot = await getDocs(q)
 
@@ -49,8 +53,8 @@ export async function getProductsByCategory(idCategory) {
 }
 
 export async function createOrder(orderData) {
-const newDoc = await addDoc(collection(db, 'orders'), orderData)
-return newDoc
+  const newDoc = await addDoc(collection(db, 'orders'), orderData)
+  return newDoc
 }
 
 export default app

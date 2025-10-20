@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-// import "./ItemListContainer.css";
-// import { getProductsByCategory } from "../../data/API.js";
 import { getProducts, getProductsByCategory } from "../../data/firebase.js";
 import Item from "../Item.jsx";
 
