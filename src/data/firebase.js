@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, query, where, collection, doc, getDoc, getDocs, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDYHYZ2wXs1o0S85IwZcQbD9lPjoWEtHYA",
+  apiKey: import.meta.env.VITE_FS_APIKEY,
   authDomain: "pampanova-de1cd.firebaseapp.com",
-  projectId: "pampanova-de1cd",
+  projectId: import.meta.env.VITE_FS_PROJECTID,
   storageBucket: "pampanova-de1cd.firebasestorage.app",
   messagingSenderId: "195081035187",
-  appId: "1:195081035187:web:a4c77c51c476041674ffc6"
+  appId: import.meta.env.VITE_FS_APP_ID
 };
 
 //Initialize Firebase
