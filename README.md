@@ -1,18 +1,36 @@
-# React + Vite
+# PAMPA | Distribuidora de Cerrajería
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Descripción
+PAMPA es un eCommerce de productos de cerrajería desarrollado en React.
+Permite a los usuarios navegar por categorías, agregar productos al carrito y finalizar la compra.
 
-Currently, two official plugins are available:
+# Demo online
+https://proyecto-final-gutierrez-ra2f.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Tecnologías
+- **Frontend:** React
+- **Herramientas:** Vite, Node.js, npm
+- **Base de datos:** Firebase
+- **Librería de estilos:** Bootstrap
+- **Librería de Íconos:** Lucide React
 
-## React Compiler
+# Funcionalidades
+- Navbar (pendiente menú responsive).
+- Listado de productos por categoría.
+- Carrito de compras que permite agregar y eliminar productos.
+- Checkout con formulario de datos del comprador.
+- Mensaje de confirmación al finalizar la compra.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+# Instalación y ejecución
 
-Note: This will impact Vite dev & build performances.
+**1. Clonar el repositorio**
+💻 git clone https://github.com/danielagutie/ProyectoFinal-Gutierrez
 
-## Expanding the ESLint configuration
+**2. Instalar dependencias**
+💻 npm install
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**3. Iniciar el servidor de desarrollo**
+💻 npm run dev
+
+**4. Abrir en el navegador**
+🖥️ http://localhost:5173
