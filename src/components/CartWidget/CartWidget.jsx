@@ -1,5 +1,7 @@
 import { useState, useContext } from "react";
 import { Link } from "react-router";
+import { ShoppingCart } from "lucide-react";
+
 import CartContext from "../../context/cartContext";
 
 import "./CartWidget.css";
@@ -7,13 +9,16 @@ import "./CartWidget.css";
 export default function CartWidget() {
   const { countItems } = useContext(CartContext);
 
+  const items = countItems();
+
+
   return (
-    <div className="col-3 col-lg-auto">
-      <ul className="list-unstyled d-flex m-0">
-        <li className="d-none d-lg-block">
-          🛒cart <span className="cart-count">({countItems()})</span>
-        </li>
-      </ul>
-    </div>
+
+    <li className="shopping_cart">
+      <Link to="/cart">
+        <ShoppingCart />
+      </Link>
+      {items > 0 && <span className="item_count">{items}</span>}
+    </li>
   );
 }

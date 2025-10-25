@@ -27,12 +27,17 @@ export default function ItemListContainer(props) {
     return <p>No hay productos para la categoría seleccionada.</p>;
 
   return (
-    <div className="container mt-4">
-      <h2 className="mb-4">{props.titulo}</h2>
-      <div className="row g-3">
-        {products.map((prod) => (
-          <Item key={prod.id} prod={prod} />
-        ))}
+    <div className="shop_section shop_reverse">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-12 col-md-12">
+            <div className="row shop_wrapper">
+              {products.map((product) => (
+                <Item key={product.id} product={product} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
