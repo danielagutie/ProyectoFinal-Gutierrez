@@ -32,6 +32,9 @@ export async function getProducts() {
 export async function getProductById(id) {
   const docRef = doc(db, 'products', id)
   const docSnapshot = await getDoc(docRef)
+
+  if (!docSnapshot.exists()) throw new Error("Producto no encontrado")
+
   const docData = docSnapshot.data()
   docData.id = docSnapshot.id
 

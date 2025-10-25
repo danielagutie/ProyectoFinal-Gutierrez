@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 
-import CartWidget from "../CartWidget/CartWidget";
+import CartWidget from "./CartWidget";
 import "./NavBar.css";
 
 export default function Header() {

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { getProducts, getProductsByCategory } from "../../data/firebase.js";
-import Item from "../Item.jsx";
+import Item from "../Item/Item.jsx";
 
 export default function ItemListContainer(props) {
   const { idCategory } = useParams();
