@@ -1,4 +1,4 @@
-import "./formCheckOut.css";
+import "./FormCheckOut.css";
 
 import { useState } from "react";
 
