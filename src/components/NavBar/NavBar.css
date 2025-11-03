@@ -1,10 +1,105 @@
-.header_logo img {
-  height: 38px;
-  width: 112px;
+/* =========================================================
+   MENU DESKTOP
+   ========================================================= */
+
+.main_menu .menu-item-has-children {
+  font-weight: 500;
 }
 
-/* @media (max-width: 768px) {
-  .logo-img {
-    height: 35px;
-  }
+.menu-item-has-children:hover .sub_menu {
+  display: block;
+}
+
+/* Flecha con transición */
+.menu-item-has-children .menu-label svg {
+  transition: transform 0.3s;
+}
+
+/* Rotar flecha al hover */
+.menu-item-has-children:hover .menu-label svg {
+  transform: rotate(180deg);
+}
+
+/* =========================================================
+   OFFCANVAS MENU (MOBILE)
+   ========================================================= */
+
+/* Contenedor offcanvas */
+.offcanvas_menu_wrapper {
+  z-index: 1100 !important;
+}
+
+.offcanvas_main_menu li div {
+  border-bottom: 1px solid #ededed;
+}
+
+.offcanvas_main_menu .menu-item-has-children.menu-open>.sub-menu {
+  max-height: 500px;
+}
+
+/* Primer hijo forzado igual que los demás */
+.offcanvas_main_menu li:first-child>div,
+.offcanvas_main_menu li:first-child>a {
+  padding-top: 18px !important;
+}
+
+.canvas_open button,
+.canvas_close button {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.offcanvas_main_menu .menu-item-has-children>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 18px;
+}
+
+/* Rotar flecha cuando el submenú está abierto */
+.offcanvas_main_menu .menu-item-has-children.menu-open>div svg {
+  transform: rotate(180deg);
+}
+
+/* Submenú mobile */
+.offcanvas_main_menu .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* Links mobile */
+.offcanvas_main_menu a {
+  padding: 10px 18px;
+}
+
+/* ================= Account / Cart ================= */
+
+/* .header_account ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header_account li {
+  margin-left: 15px;
+}
+
+.header_account .dropdown_account_link {
+  display: none;
+  position: absolute;
+  background: #fff;
+  list-style: none;
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header_account li:hover .dropdown_account_link {
+  display: block;
 } */
