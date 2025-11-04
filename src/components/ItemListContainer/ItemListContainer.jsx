@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import { getProducts, getProductsByCategory } from "../../data/firebase.js";
+import Filters from "../Filters/Filters.jsx";
+import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 import Item from "../Item/Item.jsx";
 
 export default function ItemListContainer(props) {
@@ -30,11 +32,36 @@ export default function ItemListContainer(props) {
     <div className="shop_section shop_reverse">
       <div className="container">
         <div className="row">
-          <div className="col-lg-12 col-md-12">
+
+          <div className="col-lg-3 col-md-12">
+            {/* <Filters /> */}
+          </div>
+
+          <div className="col-lg-9 col-md-12">
+            <Breadcrumbs items={[{ label: "Inicio", link: "/" }, { label: "Productos" }]} />
+
+            <div className="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
+              <div className="page_amount">
+                <p><span></span> Listado</p>
+              </div>
+            </div>
+
             <div className="row shop_wrapper">
               {products.map((product) => (
-                <Item key={product.id} product={product} />
+                <div key={product.id} className="col-lg-4 col-md-4 col-sm-6 col-6">
+                  <Item product={product} />
+                </div>
               ))}
+            </div>
+
+            <div className="pagination_style pagination justify-content-center">
+              <ul className="d-flex">
+                <li><a href="#">&lt;&lt;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a className="current" href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&gt;&gt;</a></li>
+              </ul>
             </div>
           </div>
         </div>
