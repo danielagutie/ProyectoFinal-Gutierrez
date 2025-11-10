@@ -40,11 +40,12 @@ export default function ItemListContainer(props) {
           <div className="col-lg-9 col-md-12">
             <Breadcrumbs items={[{ label: "Inicio", link: "/" }, { label: "Productos" }]} />
 
-            <div className="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
+            {/* ToDo: Mostrar cantidad de productos */}
+            {/* <div className="shop_toolbar_wrapper d-flex justify-content-between align-items-center">
               <div className="page_amount">
-                <p><span></span> Listado</p>
+                <p><span></span> Cantidad de productos</p>
               </div>
-            </div>
+            </div> */}
 
             <div className="row shop_wrapper">
               {products.map((product) => (

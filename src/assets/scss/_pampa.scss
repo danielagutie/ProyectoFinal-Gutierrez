@@ -1,0 +1,31 @@
+// .texto_color {
+//   color: $secondary_color;
+// }
+
+// /* Template */
+
+.product_availalbe {
+  ul {
+    & li {
+
+      margin-right: 12px;
+      padding-right: 20px;
+
+      & svg.lucide {
+        font-size: 18px;
+        color: #999999;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+
+      & span {
+        color: $secondary_color;
+      }
+    }
+  }
+}
+
+// .product_variant .filter__list.widget_color h3 {
+//   width: auto;
+//   margin-right: 50px;
+// }

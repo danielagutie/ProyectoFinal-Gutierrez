@@ -5,15 +5,15 @@ const CartContext = createContext();
 export function CartProvider(props) {
   const [cartItems, setCartItems] = useState([]);
 
-  function addToCart(newItem) {
+  function addToCart(newItem, quantityToAdd) {
     const newCartItems = structuredClone(cartItems);
 
     const indexItem = newCartItems.findIndex(item => item.id == newItem.id);
 
     if (indexItem !== -1) {
-      newCartItems[indexItem].quantity++;
+      newCartItems[indexItem].quantity += quantityToAdd;
     } else {
-      newCartItems.push({ ...newItem, quantity: 1 });
+      newCartItems.push({ ...newItem, quantity: quantityToAdd });
     }
 
     setCartItems(newCartItems);
