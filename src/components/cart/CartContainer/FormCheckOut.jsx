@@ -63,7 +63,7 @@ export default function FormCheckOut({ handleCheckout }) {
             </div>
 
             <div className="form_group group_3">
-              <button className="btn btn-primary" type="submit">Finalizar Compra</button>
+              <button className="btn btn-primary border" type="submit">Finalizar Compra</button>
             </div>
           </form>
 

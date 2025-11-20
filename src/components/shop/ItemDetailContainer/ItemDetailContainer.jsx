@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router";
 import { Layers, Plus } from "lucide-react";
-import { getProductById } from "../../data/firebase.js";
-import CartContext from "../../context/cartContext";
-import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
-import QuantityInput from "../QuantityInput/QuantityInput.jsx";
+import { getProductById } from "../../../data/firebase.js";
+import CartContext from "../../../context/cartContext.jsx";
+import { Breadcrumbs, QuantityInput } from "@/components";
 
 export default function ItemDetailContainer() {
     const { id } = useParams();
@@ -86,7 +85,7 @@ export default function ItemDetailContainer() {
                                     </div>
 
                                     <div className="variant_quantity_btn d-flex">
-                                        <QuantityInput min={1} max={100} initial={1} onChange={setQuantityToAdd} />
+                                        <QuantityInput min={1} initial={1} onChange={setQuantityToAdd} />
                                         <button className="button btn btn-primary"
                                             onClick={() => context.addToCart(product, quantityToAdd)}>
                                             <Plus size={18} /> Agregar

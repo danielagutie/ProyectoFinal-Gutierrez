@@ -1,16 +1,16 @@
 import "./NavBar.css";
 import { useState, useEffect } from "react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown, User } from "lucide-react";
-import CartWidget from "./CartWidget";
 
-export default function Header() {
+import { CartWidget } from "./";
+
+export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubmenus, setOpenSubmenus] = useState({});
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 992);
 
   const menuItems = [
-    // { label: "shop", to: "/shop" },
     {
       label: "PRODUCTOS",
       children: [
@@ -28,7 +28,6 @@ export default function Header() {
     }
   ];
 
-  // Solo un submenú abierto a la vez en mobile
   const toggleSubmenu = (index) => {
     if (isMobile) {
       setOpenSubmenus((prev) => {
@@ -38,7 +37,6 @@ export default function Header() {
     }
   };
 
-  // Detectar resize para cambiar entre mobile/desktop
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth <= 992;
@@ -73,7 +71,7 @@ export default function Header() {
                 {/* Logo */}
                 <div className="header_logo">
                   <Link to="/" className="sticky_none">
-                    <img src="./images/logo-text.png" alt="Logo" />
+                    <img src="/images/logo-text.png" alt="Logo" />
                   </Link>
                 </div>
 
